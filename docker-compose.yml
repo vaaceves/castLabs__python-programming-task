@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  proxy:
+    build:
+      context: .
+    command: uvicorn main:app --reload --host 0.0.0.0
+    volumes:
+      - ./proxy:/app
+    ports:
+      - "8000:8000"
